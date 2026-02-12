@@ -175,9 +175,9 @@ create_service() {
     local exec_cmd=""
 
     if [ "$ROLE" == "server" ]; then
-        exec_cmd="/usr/sbin/iodined -f -c -P $PASSWORD -M $MTU_SIZE $TUN_SERVER_IP $DOMAIN"
+        exec_cmd="/usr/sbin/iodined -f -c -P $PASSWORD -m $MTU_SIZE $TUN_SERVER_IP $DOMAIN"
     else
-        exec_cmd="/usr/sbin/iodine -f -P $PASSWORD -M $MTU_SIZE $DOMAIN"
+        exec_cmd="/usr/sbin/iodine -f -P $PASSWORD -m $MTU_SIZE $DOMAIN"
     fi
 
     cat <<EOF > /etc/systemd/system/${service_name}.service
